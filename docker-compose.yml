@@ -50,7 +50,7 @@ services:
       - media_volume:/opt/src/media
     depends_on:
       - db
-      - api
+      - web
     healthcheck:
       test: ["CMD", "/usr/src/healthcheck.sh"]
       interval: 30s
