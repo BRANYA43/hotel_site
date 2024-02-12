@@ -57,3 +57,12 @@ services:
       timeout: 5s
       retries: 3
     restart: always
+
+
+volumes:
+  db_volume:
+    name: hotel_web
+  media_volume:
+    name: hotel_media
+  static_volume:
+    name: hotel_static
