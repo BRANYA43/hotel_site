@@ -1,11 +1,11 @@
 FROM python:3.11-slim
 
 RUN apt update; \
-    apt install -y --no-install-recommends build-essential gcc mc nano curl; \
+    apt install -y --no-install-recommends build-essential libpq-dev gcc mc nano curl; \
     rm -rf /var/lib/apt/lists/*; \
     python -m venv /opt/venv
 
-ENV PATH="/opt/venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+ENV PATH="/opt/venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 DOCKER_RUN=1
 
 WORKDIR /opt/src
 
