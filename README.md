@@ -57,3 +57,29 @@ POSTGRES_HOST=<host>
 - Username: admin
 - Password: 123
 
+***
+### Docker commands
+#### Run steck of containers
+```commandline
+docker compose up
+```
+
+#### Stop steck of container
+```
+ctrl + C
+```
+OR
+```commandline
+docker compose stop
+```
+#### Delete steck of containers
+```commandline
+docker compose down
+```
+with volumes
+```commandline
+docker compose down -v
+```
+
+If you installed docker compose as application to your OS that command must start with 
+`docker-compose` instead `docker compose`.
