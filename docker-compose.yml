@@ -23,3 +23,19 @@ services:
       timeout: 10s
       retries: 3
     restart: always
+    depends_on:
+      - db
+
+  db:
+    build: postgres/.
+    image: branya/hotel_db:1.0.0
+    env_file:
+      - ./.env
+    volumes:
+      - db_volume:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD", "/usr/src/healthcheck.sh"]
+      interval: 30s
+      timeout: 2s
+      retries: 5
+    restart: always
